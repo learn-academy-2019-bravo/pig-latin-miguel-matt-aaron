@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <link rel="stylesheet" href="piglatin.css" />
+        <title>Pig Latin </title>
+    </head>
+    <body>
+        <h1>Pig Latin</h1>
+        <h3>Rules</h3>
+        <ul>
+            <li>For words beginning with a vowel, add "way" to the end.</li>
+            <li>For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".</li>
+            <li>If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!</li>
+            <li>For words beginning with "y", treat "y" as a consonant.</li>
+        </ul>
+        <div class="textBox">
+            <textarea name="name" rows="8" cols="80" id="userInput"></textarea>
+        </div>
+
+        <button type= "button" name="button" class="btn btn-primary" onClick="pigLatin()"><strong>Translate</strong></button>
+        <div>
+            <em><output id="userOutput"></output></em>
+        </div>
+
+        <br />
+
+
+
+
+        <script src="piglatin.test.js"></script>
+    </body>
+</html>

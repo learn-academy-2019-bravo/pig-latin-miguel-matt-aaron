@@ -1,0 +1,19 @@
+h1 {
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 20px #ff0080, 0 0 30px #ff0080, 0 0 40px #ff0080, 0 0 55px #ff0080, 0 0 75px #ff0080;
+    text-align: center
+}
+
+body {
+    background-image: url("https://www.leadwithlanguages.org/wp-content/uploads/2017/02/Latin.jpg");
+    color: #FFFF9F;
+    background-repeat:no-repeat;
+    background-size: cover;
+}
+
+.textBox {
+    opacity: 0.7;
+}
+
+
+
+/* "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg7j3AygBnhoZrxGf-9teSvZV7EEdmJP9WKO_y95o9wP6bmSbo" */

@@ -48,25 +48,26 @@
 //     }
 // }
 // console.log(letterCheck(str))
-
-
-// const letterCheck = (str) => {
-//     if (Number.isInteger(str) === true) {
+//
+// //
+// const letterCheck = () => {
+//     let userInput= document.getElementById("userInput").value
+//     if (Number.isInteger(userInput) === true) {
 //         alert(`Please input only letters`)
 //     } else {
-//         let letters = str
-//         return letters
+//         return userInput
 //     }
 // }
-
-
-// describe ("pigLatin", () => {
-//     let str = "our is able"
-//     test("checks vowel or const and return ay or way", () => {
-//         expect(pigLatin(str)).toBe(['our-way', 'is-way', 'able-way'])
 //
-//     })
-// })
+
+describe ("pigLatin", () => {
+    let test1 = "squat"
+    let test2 = "hi are you here"
+    test("translates userinput to pigLatin", () => {
+        expect(pigLatin(test1)).toBe("atsqu-ay")
+        expect(pigLatin(test2)).toBe("ih-ay are-way ouy-ay ereh-ay")
+    })
+})
 
 // const pigLatin = (letters) => {
 //     let arr = letters.split(" ")
@@ -80,8 +81,9 @@
 // }
 
 
-const pigLatin = (letters) => {
-    let arr = letters.split(" ")
+const pigLatin = () => {
+    let userInput= document.getElementById("userInput").value
+    let arr = userInput.split(" ")
     let vowels = ["a", "e", "i", "o", "u"]
     let outcomeArr = []
     arr.forEach(word => {
@@ -93,34 +95,40 @@ const pigLatin = (letters) => {
                 if(index2 === "a" || index2 === "e" || index2 === "i" || index2 === "o"){
                     return index2
                 }
-
             })
             outcomeArr.push(`${word.substring(vowelIndex2)}${word.substring(0, vowelIndex2)}-ay`)
         } else {
             let newArr = word.split("")
-            let vowelIndex = newArr.findIndex(index=>{
-                if (index === "a" || index === "e" || index === "i" || index === "o" || index === "u" && index != "q") {
-                    return index
-                }
-            })
             if (word[1] === "q"){
                 outcomeArr.push(`${word.substring(3)}${word.substring(0,3)}-ay`)
+            } else {
+                let vowelIndex = newArr.findIndex(index=>{
+                    if (index === "a" || index === "e" || index === "i" || index === "o" || index === "u" && index != "q") {
+                        return index
+                    }
+                })
+                //This word.substring(0, vowelIndex) will take consonants out of word and add the end of the word and then add ay
+                outcomeArr.push(`${word.substring(vowelIndex)}${word.substring(0, vowelIndex)}-ay`)
             }
-            //This word.substring(0, vowelIndex) will take consonants out of word and add the end of the word and then add ay
-            outcomeArr.push(`${word.substring(vowelIndex)}${word.substring(0, vowelIndex)}-ay`)
         }
 
     })
-    return outcomeArr.join(" ")
+    document.getElementById("userOutput").innerHTML = outcomeArr.join(" ")
+    // return outcomeArr.join(" ")
 }
 
+// const translate = () => {
+//     const check = letterCheck()
+//     const pig = pigLatin(letters)
+//     document.getElementById("userOutput").innerHTML = translate
+// }
 // console.log(pigLatin("i hope this works guys quiet squeal"))
 
 
 // for (let i=0; i<vowels.length; i++) {
-//     for (let j=0; j<newArr.length; j++) {
-//         if (vowels[i] === newArr[j]) {
-//             return newArr.indexOf(newArr[j])
-//         }
-//     }
-// }
+    //     for (let j=0; j<newArr.length; j++) {
+        //         if (vowels[i] === newArr[j]) {
+            //             return newArr.indexOf(newArr[j])
+            //         }
+            //     }
+            // }
